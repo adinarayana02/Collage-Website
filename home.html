@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="footer.css">
+    <link rel="stylesheet" media="screen" href="head.css">
+    <link rel="stylesheet" media="screen" href="image.css">
+    <link rel="stylesheet" media="screen" href="image.js">
+    <link rel="stylesheet" media="screen" href="slide.js">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="icon" href="images/logo.png">
+    <title>Vasireddy Venkatadri Institute of Technology</title>
+    
+ 
+<!-- Start CSS Slideshow HEAD section -->
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<!-- End CSS Slider HEAD section -->
+<!-- Start CSS Slideshow BODY section -->
+
+      
+</head>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!--===== MAIN JS =====-->
+<script src="assets/js/main.js"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+<script src="https://kit.fontawesome.com/5d59e8f58e.js" crossorigin="anonymous"></script>
+<script>
+
+    function makeData(data){
+        let html = ``;
+        for(let i = 0; i < data.length; i++){
+            html += `
+            <div style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 255, .2);padding:2.5px">
+                <a href="" class="work__img">
+                    <img src="assets/img/work${i+1}.jpg" alt="">
+                    <div style="background-color: #fff;padding-left: 5px;">
+                        <a href="${data[i]['Github Link']}" target="_blank"><h3 style="text-align: center;">${data[i]['Project Name']}</h3></a>
+                        <p>${data[i]['Tools and Tech']}</p>
+                    </div>
+                    
+                </a>
+            </div>
+        `;
+        }
+        document.getElementById('results').innerHTML = html;
+    }
+
+    async function getDataFromExcel(){
+        let scripturl = 'https://script.google.com/macros/s/AKfycbzgVqA-lku4whkNfjuIGVDC27sa0BR_u9PnLE6rEfsDOcoY8kaet21egbzusH_M9zGf/exec';
+        let data = await fetch(scripturl);
+        data = await data.json();
+        makeData(data);
+        console.log(data);
+    }
+    getDataFromExcel();
+
+    async function contactme(){
+        let cname = document.getElementById('cname').value;
+        let cemail = document.getElementById('cemail').value;
+        let cmessage = document.getElementById('cmessage').value;
+        object = {
+            name:cname,
+            email:cemail,
+            message:cmessage
+        };
+        
+        let scripturl = "https://script.google.com/macros/s/AKfycbzVlBjtSSpaB1pswtDh_9rVeWI3SJlXpiMDNx0wD1jNskAborlqyVbYrHz8VHtHgjNe/exec";
+        let data = await fetch(scripturl, {
+            method: "POST",
+            body: JSON.stringify(object),
+            mode: 'no-cors',
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+                'Access-Control-Allow-Origin':'*'
+            }
+        });
+        document.getElementById('cname').value = '';
+        document.getElementById('cemail').value = '';
+        document.getElementById('cmessage').value = '';
+        document.getElementById('msg').style.display = 'block';
+        setTimeout(()=>{
+            document.getElementById('msg').style.display = 'none';
+        },2000);
+    }
+</script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ <script>
+   AOS.init({
+    offset: 180, // offset (in px) from the original trigger point
+    duration: 1000, 
+   });// values from 0 to 3000, with step 50ms
+ </script>
+<div class="page-container">
+
+  <section class="manu_bar" id="stick">
+      <div class="menu_pos">
+          <div class="container">
+              <div class="row" style="background-color: #121313; 
+              color: white; padding: 0px; margin-bottom: -4px;">
+                <div align="center" class="col-md-9"><a href="#" style="display: inline-block; border-radius: 4px; background-color: #FFC300; 
+                text-align: center; font-size: 13px; color: #000000; padding: 5px; margin-top: 12px; font-weight: bold;" target="_blank">Vasireddy Venkatadri Institute Of Technology<a href="admission.html" style="display: inline-block; 
+                border-radius: 4px; background-color: #FFC300; text-align: center; font-size: 13px; color: #000000; 
+                padding: 5px; margin-top: 12px; font-weight: bold;" target="_blank"></a>
+                </div>
+                  <div class="col-md-3" style="background-color: #1979a9; text-align: center; font-weight: 500;"> 
+                  <div class="vc-mm-menu-h  vc-mm-h-layout-2 vc-mm-container" id="fontSize">
+               
+<body>
+
+    <header>
+      <div id="first">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            
+        </ul>
+        
+        <div class="navbar">
+            <div id="">
+                
+                <div class="dropdown">
+                    <button class="dropbtn">ABOUT
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="contact.html">About us</a>
+                      <a href="event.html">key persons</a>
+                      <a href="gallery.html">Social Education Trust</a>
+                      <a href="event.html">Vision & Mission</a>
+                      <a href="event.html">People</a>
+                      <a href="event.html">Committess</a>
+                      
+                      <a href="event.html">Achievements & SWOT Analysis</a>
+                      <a href="event.html">Letter Of CommitmentS</a>
+                    </div>
+                  </div> 
+                
+                    <div class="dropdown">
+                    <button class="dropbtn">ADMISSIONS
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="contact.html">UG ADMISSIONS</a>
+                      <a href="event.html">PG ADMISSIONS</a>
+                      <a href="event.html">Intake & Fee Details</a>
+                      <a href="event.html">Previovs Rank Info</a>
+                    </div>
+                </div> 
+                
+                <div class="dropdown">
+                    <button class="dropbtn">DEPARTMENTS
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="contact.html">Computer Science &Engineering</a>
+                      <a href="event.html">CSE (ArtificiaI Intelligence & Machine Learning)</a>
+                      <a href="event.html">B.Tech - AI&DS</a>
+                      <a href="event.html">CSE (Internet of Things)</a>
+                      <a href="event.html">CSE (IoT and Cyber Security including Blockchain Technology)</a>
+                      <a href="event.html">Electronics & Communication Engineering</a>
+                      <a href="event.html">Electrical & Electronics Engineering</a>
+                      <a href="event.html">Information Technology</a>
+                      <a href="event.html">Civil Engineering</a>
+                      <a href="event.html">Mechanical Engineering</a>
+                    </div>
+                </div> 
+            </div> 
+                
+                <div class="dropdown">
+                  <button class="dropbtn">CAMPUS LIFE
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="SAC.html">SAC</a>
+                    <a href="Clubs.html">Clubs</a>
+                    <a href="NCC.html">NCC</a>
+                    <a href="NSS.html">NSS</a>
+                    <a href="Sports.html">Sports</a>
+                  </div>
+              </div> 
+              
+              <div class="dropdown">
+                <button class="dropbtn">EXAM CELL
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="Exam Cell Profile.html">Exam Cell Profile</a>
+                  <a href="Exam Cell Staff.html">Exam Cell Staff</a>
+                  <a href="Latest Results.html">Latest Results</a>
+                  <a href="Exam Timetables.html">Exam Timetables</a>
+                  <a href="Academic Calendar.html">Academic Calendar</a>
+                </div>
+              </div>
+               
+                <div class="dropdown">
+                  <button class="dropbtn">PLACEMENT
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="Placement Profile.html">Placement Profile</a>
+                    <a href="Year wise Placement Summary.html">Year wise Placement Summary</a>
+                    <a href="Internships.html">Internships</a>
+                  </div>
+                </div> 
+                <div class="dropdown">
+                  <button class="dropbtn">MORE 
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="contact.html">Campus Visit</a>
+                    <a href="event.html">Events</a>
+                    <a href="gallery.html">Gallery</a>
+                  </div>
+                </div> 
+
+              
+               </div>
+
+<a href="index.html"> <img src="images/logo.png" alt="Vasireddy Venkatadri Institute of Technology " height="50px" width="100px"></a>
+        <div class="site-content" id="site-content">
+
+        <div class="banner_cnt row_section">
+	<div class="container">
+		<div class="ban_cnt">
+      
+	</div>
+	</div>
+</div>
+</div> 
+    </header>
+  
+    </head>
+    <body>
+     
+    
+    <div class="slideshow-container">
+    
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/collage.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/collage1.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/campus.jpeg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+                </div>			
+			
+
+						
+      
+            <div id= "center">
+                <h2>Vasireddy Venkatadri Institute of Technology </h2>
+                
+                 <div class="full-width side-gap towers">
+
+      <div class="row" style="margin: 2rem auto">
+        <div class="col-lg-4">
+          <a href="#" class="dead" aria-label="VVIT NEWS">
+            <h2>VVIT NEWS </h2>
+            <br>
+          </a>
+          <div class="items">
+          
+            <img src="images/1 (5).jpg" style="width:550px">
+            <img src="images/1 (2).jpg" style="width:500px">
+            <div class="name">Amazon Wow</div>
+            <div class="name"></div>
+          
+            
+          
+            
+         
+
+            <div class="row" style="margin: 2rem auto">
+              <div class="col-lg-4">
+                <a href="#" class="dead" aria-label="VVIT NEWS">
+                  <h2>VVIT BY NUMBER</h2>
+                  <br>
+                </a>
+
+            
+            </div>
+            <div class="ui link">
+              <a href="#" class="link-content">
+              
+              </a>
+            </div>
+            
+          </div>
+          <div class="ui flexbox">
+            <div class="ui stats-card">
+              <img data-icon="convo_hat" height="" width="" class="ui icon" >
+              </img>
+              <div class="info">
+                <div class="ui sub-heading ">
+                  3000+
+                </div>
+                <div class="ui one-liner-captions ">
+                  STUDENTS
+                </div>
+                
+              </div>
+              
+            </div>
+            <div class="ui stats-card">
+              <img data-icon="lecturer" height="" width="" class="ui icon" >
+                
+              </img>
+              <div class="info">
+                <div class="ui sub-heading ">
+                  500+
+                </div>
+                <div class="ui one-liner-captions ">
+                  FACULTY
+                </div>
+                
+              </div>
+              
+            </div>
+            <div class="ui stats-card">
+              <img data-icon="id_card" height="" width="" class="ui icon" >
+                
+              </img>
+              <div class="info">
+                <div class="ui sub-heading ">
+                  600+
+                </div>
+                <div class="ui one-liner-captions ">
+                  STAFF
+                </div>
+                
+              </div>
+              
+            </div>
+           
+            
+              
+<div class="custom-sidebar"  style="background-image: url(/images/menu_image.png)" >
+  <a class="footer-text" href="#">
+    <h1>How to reach VVIT</h1>
+  </a>
+  <br>
+  
+<div class="custom"  >
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122502.60485470846!2d80.48944574204879!3d16.363444842956916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x10a5e29cfb7acd0c!2sVasireddy+Venkatadri+Institute+of+Technology!5e0!3m2!1sen!2sin!4v1487605581738" style="border: 0;" allowfullscreen="" frameborder="0" height="250" width="100%"></iframe></div>
+						</div>
+						<div style="clear:both; height:0px"></div>
+        <footer>
+          <div class="navbar">
+            <div id="">
+                
+            </div>
+      
+			<footer class="footer row section">					
+        <div class="footer_slide">
+          <div class="footer_top section">
+            <div class="foot_rit">
+            <div class="container">
+              <div class="row section">
+                <div class="foot_col1">
+<div class="col-md-3">
+<div style="text-transform:uppercase;">
+<h3><font color="#fff">QUICK LINKS</font></h3>
+</div>
+<ul class="ul-list list_bullet placemet mar_bt_15"><li style="border-bottom:1px solid #999"><a alt="VIT Ranking and Recognition" href="#" target="_blank"><font color="#fff">Ranking &amp; Recognition</font></a></li>
+<li style="border-bottom:1px solid #999"><a alt=" UG and PG Admissions in VVIT" href="#" target="_blank"><font color="#fff">Admissions</font></a></li>
+<li style="border-bottom:1px solid #999"><a alt="World Class Infrastructure" href="#" target="_blank"><font color="#fff">Infrastructure </font></a></li>
+<li style="border-bottom:1px solid #999"><a alt="VVIT Privacy Policy" href="#" target="_blank"><font color="#fff">Privacy Policy</font></a></li>
+</ul><div style="text-transform:uppercase;">
+<h3><font color="#fff">VVITTIANS </font></h3>
+</div>
+<ul class="ul-list list_bullet placemet mar_bt_15">
+<li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">NATS [National Apprenticeship Training Scheme]</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">Industrial Visit Form</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">SAC</font></a></li>
+</ul><div style="text-transform:uppercase;">
+<h3><font color="#fff">VVIT @ CONNECT </font></h3>
+</div>
+<ul class="ul-list list_bullet placemet mar_bt_15"><li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Intranet</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Student Login</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">People orbit</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">VVIT Webmail</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">VVIT Gmail</font></a></li>
+</ul></div>
+<div class="col-md-3">
+<div style="text-transform:uppercase;">
+<h3><font color="#fff">VISITORS </font></h3>
+</div>
+<p> </p>
+<ul class="ul-list list_bullet placemet mar_bt_15"><li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">Careers</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">Alumni</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">Campus Tour</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Contact Us</font></a></li>
+</ul><div style="text-transform:uppercase;">
+<h3><font color="#fff">CAMPUS</font></h3>
+</div>
+<ul class="ul-list list_bullet placemet mar_bt_15"><li style="border-bottom:1px solid #999"><a href="#" target="_blank"><font color="#fff">Parent Login</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Counselling Division</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Hotels in Vellore </font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Guest House</font></a></li>
+<li style="border-bottom:1px solid #999"><a href="#"><font color="#fff">Campus life</font></a></li>
+</ul><div style="text-transform:uppercase;color:#fff">
+<h3>Committeess @ VVIT</h3>
+</div>
+<ul class="ul-list list_bullet placemet mar_bt_15"><li>
+<li><a href="#" style="border-bottom:1px solid #FAFAFA"><font color="#fff">General Grievance Redressal Committee</font></a></li>
+<li><a href="#" style="border-bottom:1px solid #FAFAFA"><font color="#fff">Anti Ragging Committee</font></a></li>
+</ul><div style="text-transform:uppercase;color:#fff">
+<div class="col-md-3">
+</div>
+
+</div>
+  </div>
+  </div>
+          <div class="footer_bottom section">
+            <div class="container">
+            <div>
+<ul class="copy_right">
+<li>Copyright© Vasireddy Venkatadri Institue Of Technology</li>
+</ul>
+            </div>
+            <hr style="border-top: 1px solid gray; margin: 5px 0px 5px 0px;" />
+            
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12" align="center">
+                  <span style="font-size: 14px; color: white;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>		
+    </footer> 
+            
+                      
+</body>
+</html>
